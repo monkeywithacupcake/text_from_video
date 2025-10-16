@@ -31,3 +31,6 @@ coverage.xml
 .hypothesis/
 .pytest_cache/
 cover/
+
+#mac
+.DS_Store

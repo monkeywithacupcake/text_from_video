@@ -4,11 +4,16 @@ version = "0.1.0"
 description = "Transcribes text from a video using whisper and moviepy"
 readme = "README.md"
 license = "GPL-3.0-or-later"
-requires-python = ">=3.12"
+requires-python = ">=3.9"
 dependencies = [
     "moviepy",
-    "whisper"
+    "openai-whisper==20250625",
+    "numpy<2"
 ]
 [build-system]
 requires = ["uv_build"]
 build-backend = "uv_build"
+[tool.uv]
+required-environments = [
+    "sys_platform == 'darwin' and platform_machine == 'x86_64'",
+]
