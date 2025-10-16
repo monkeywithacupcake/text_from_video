@@ -5,7 +5,7 @@ import tempfile
 import argparse
 
 
-def get_transcript_from_video(video_path, model_select = "base"):
+def get_transcript_from_video(video_path, model_select = "tiny"):
     # prepare to use model
     model = whisper.load_model(model_select)
     try: 
@@ -24,7 +24,7 @@ def save_text_to_path(fpath, ftext):
       file.write(ftext)
 
 def get_transcript_save_to_text(the_video_path, the_text_path):
-    the_result = get_transcript_from_video(the_video_path, model_select="tiny")
+    the_result = get_transcript_from_video(the_video_path, model_select="small")
     transcribed_text = the_result["text"]
     save_text_to_path(fpath = the_text_path, ftext = transcribed_text)
 
