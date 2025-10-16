@@ -8,7 +8,7 @@ supply a video file path and get a transcribed text
 2. `uv sync`
 
 ```sh
-uv run src/text_from_video/text_from_video.py "path/to/video.mp4" "path/to/save.txt"
+uv run main.py "path/to/video.mp4" "path/to/save.txt"
 ```
 
 
