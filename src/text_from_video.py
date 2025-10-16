@@ -9,14 +9,14 @@ def get_transcript_from_video(video_path, model_select = "base"):
     # prepare to use model
     model = whisper.load_model(model_select)
     try: 
-        result = model.transcribe(video_path)  
+        result = model.transcribe(video_path, verbose=True)  
     except: 
     # we could not get direct from video, so create audio
         with tempfile.TemporaryDirectory() as temp_dir:
             audio_path = os.path.join(temp_dir, "extracted_audio.mp3")
             video = VideoFileClip(video_path)
             video.audio.write_audiofile(audio_path)
-            result = model.transcribe(audio_path)
+            result = model.transcribe(audio_path, verbose=True)
     return(result)
 
 def save_text_to_path(fpath, ftext):
